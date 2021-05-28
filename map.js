@@ -36,7 +36,7 @@ var convertData = function (data) {
 
 async function initChart() {
     let chart = echarts.init(document.getElementById('map'));
-    let alladcode = await getGeoJson('all.json')
+    let alladcode = await getGeoJson('all.json').catch()
     let chinaGeoJson = await getGeoJson(geoData + '_full.json')
     initEcharts(chinaGeoJson, titleName, chart, alladcode)
 }
